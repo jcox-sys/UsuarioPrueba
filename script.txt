@@ -1,0 +1,75 @@
+USE [AdministracionUsuario]
+GO
+
+/****** Object:  Table [dbo].[cargos]    Script Date: 17/8/2023 13:25:14 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[cargos](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[codigo] [nvarchar](max) NULL,
+	[nombre] [nvarchar](max) NULL,
+	[IdUsuarioCreacion] [int] NOT NULL,
+ CONSTRAINT [PK_cargos] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+-----------------------------------------------------
+USE [AdministracionUsuario]
+GO
+
+/****** Object:  Table [dbo].[Departamento]    Script Date: 17/8/2023 13:25:43 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Departamento](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[codigo] [nvarchar](max) NULL,
+	[nombre] [nvarchar](max) NULL,
+	[IdUsuarioCreacion] [int] NOT NULL,
+ CONSTRAINT [PK_Departamento] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+----------------------------------------------------------------------------------------
+USE [AdministracionUsuario]
+GO
+
+/****** Object:  Table [dbo].[Usuarios]    Script Date: 17/8/2023 13:26:57 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Usuarios](
+	[usuario] [nvarchar](450) NOT NULL,
+	[email] [nvarchar](max) NULL,
+	[primerNombre] [nvarchar](max) NULL,
+	[segundoNombre] [nvarchar](max) NULL,
+	[primerApellido] [nvarchar](max) NULL,
+	[segundoApellido] [nvarchar](max) NULL,
+	[IdDepartamento] [int] NULL,
+	[IdCArgo] [int] NULL,
+ CONSTRAINT [PK_Usuarios] PRIMARY KEY CLUSTERED 
+(
+	[usuario] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
